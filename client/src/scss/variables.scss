@@ -1,0 +1,24 @@
+$primary-color: #500000;
+$detail-color: #cd5500;
+$secondary-color: #ffbb00;
+$white-color: #fffafa;
+$black-color: #232323;
+
+$content-font: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$title-font: "Jersey20", "Arial Black", sans-serif;
+
+$mobile-title: 1.4rem;
+$mobile-content: 1rem;
+$desktop-title: 2rem;
+$desktop-content: 1.2rem;
+
+$font-stroke:
+  -0.025rem -0.025rem $black-color,
+  0.025rem -0.025rem $black-color,
+  -0.025rem 0.025rem $black-color,
+  0.025rem 0.025rem $black-color,
+  0.05rem 0.05rem $black-color;
+
+$header-height: 3.9rem;
+
+$nav-mobile-height: 4.3rem;

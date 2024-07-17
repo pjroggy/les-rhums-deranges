@@ -1,5 +1,4 @@
 // Import the repository modules responsible for handling data operations on the tables
-const ItemRepository = require("./models/ItemRepository");
 const RumRepository = require("./models/RumRepository");
 const IngredientRepository = require("./models/IngredientRepository");
 const ArrangedRumRepository = require("./models/ArrangedRumRepository");
@@ -14,7 +13,6 @@ const tables = {};
 /* ************************************************************************* */
 
 // Register each repository as data access point for its table
-tables.item = new ItemRepository();
 tables.rum = new RumRepository();
 tables.ingredient = new IngredientRepository();
 tables.arranged_rum = new ArrangedRumRepository();

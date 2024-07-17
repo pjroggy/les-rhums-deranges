@@ -1,0 +1,48 @@
+@import "../../scss/index.scss";
+
+.mySwiper {
+  margin-bottom: 1rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background: $white-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+  @include for-desktop-up {
+    height: 35rem;
+  }
+}
+.swiper-pagination-bullet {
+  background-color: $secondary-color;
+  opacity: 1;
+  transform: translateY(-0.3rem);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $detail-color;
+  background-image: url("../../assets/icones/rum.ico");
+  background-size: cover;
+  width: 1.2rem;
+  height: 1.2rem;
+  transform: translateY(0);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: $detail-color;
+  width: 2rem;
+  height: 2rem;
+}

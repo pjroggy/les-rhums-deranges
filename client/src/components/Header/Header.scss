@@ -1,0 +1,32 @@
+@import "../../scss/index.scss";
+
+.header-title {
+  color: $secondary-color;
+}
+
+.header-image {
+  width: 10rem;
+  height: 10rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $secondary-color;
+  text-decoration: none;
+  &.active {
+    color: $detail-color;
+  }
+  &.active {
+    color: $detail-color;
+  }
+  &:hover {
+    color: $detail-color;
+  }
+}

@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap");
+@import "./variables";
+@import "./mixins";
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $content-font;
+  background-color: $primary-color;
+  color: $white-color;
+  padding-bottom: $nav-mobile-height;
+
+  @include for-desktop-up {
+    padding-top: $header-height;
+    padding-bottom: 0;
+  }
+}
+
+main {
+  min-height: calc(100vh - ($nav-mobile-height + $header-height));
+}
+
+h1 {
+  @include clamp-title;
+  font-family: $title-font;
+  text-align: center;
+  color: $white-color;
+  font-weight: 400;
+  margin: 1rem;
+  text-shadow: $font-stroke;
+
+  @include for-desktop-up {
+    margin: 2rem;
+  }
+}
+
+h2 {
+  @extend h1;
+}
+
+p {
+  @include clamp-content;
+  font-family: $content-font;
+  font-weight: 400;
+  text-align: left;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $secondary-color;
+  border-radius: 0.5rem;
+  overflow-x: none;
+}
