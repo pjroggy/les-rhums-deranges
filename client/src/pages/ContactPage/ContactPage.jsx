@@ -1,5 +1,5 @@
 import { Form } from "react-router-dom";
-// import "./ContactPage.scss";
+import "./ContactPage.scss";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -10,34 +10,34 @@ function ContactPage() {
   return (
     <main>
       <h1 id="formulaire">Contact</h1>
-      <Form method="post" className="registration-form">
-        <label className="label-registration" htmlFor="firstname">
+      <Form method="post" className="form-recepie">
+        <label className="label-recepie" htmlFor="firstname">
           Prénom
         </label>
         <input
-          className="input-registration"
+          className="input-recepie"
           type="text"
           id="firstname"
           name="firstname"
           placeholder="Prénom"
           required
         />
-        <label className="label-registration" htmlFor="lastname">
+        <label className="label-recepie" htmlFor="lastname">
           Nom
         </label>
         <input
-          className="input-registration"
+          className="input-recepie"
           type="text"
           id="lastname"
           name="lastname"
           placeholder="Nom"
           required
         />
-        <label className="label-registration" htmlFor="email">
+        <label className="label-recepie" htmlFor="email">
           Email
         </label>
         <input
-          className="input-registration"
+          className="input-recepie"
           type="email"
           id="email"
           name="email"
@@ -45,11 +45,11 @@ function ContactPage() {
           pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
           required
         />
-        <label className="label-registration" htmlFor="message">
+        <label className="label-recepie" htmlFor="message">
           Message
         </label>
         <textarea
-          className="input-registration input-message"
+          className="input-recepie input-message"
           type="text"
           id="message"
           name="message"

@@ -17,14 +17,14 @@ class RumRepository extends AbstractRepository {
   async read(id) {
     const [rows] = await this.database.query(
       `SELECT rum.*, JSON_ARRAYAGG(
-          JSON_OBJECT(
-            "id", arranged_rum.id,
-            "name", arranged_rum.name
-          )
-        ) as arranged_rums FROM ${this.table}
-        LEFT JOIN arranged_rum ON arranged_rum.rum_id = rum.id
-        WHERE rum.id = ?
-        GROUP BY rum.id`,
+        JSON_OBJECT(
+          "id", arranged_rum.id,
+          "name", arranged_rum.name
+        )
+      ) as arranged_rums FROM ${this.table}
+      LEFT JOIN arranged_rum ON arranged_rum.rum_id = rum.id
+      WHERE rum.id = ?
+      GROUP BY rum.id`,
       [id]
     );
     return rows[0];
@@ -44,7 +44,10 @@ class RumRepository extends AbstractRepository {
   }
 
   async delete(id) {
-    const [result] = await this.database.query(`DELETE FROM ${this.table} WHERE id = ?`, [id]);
+    const [result] = await this.database.query(
+      `DELETE FROM ${this.table} WHERE id = ?`,
+      [id]
+    );
     return result.affectedRows;
   }
 }

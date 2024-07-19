@@ -10,12 +10,12 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lexend Exa", sans-serif;
 }
 
 body {
-  font-family: $content-font;
-  background-color: $primary-color;
-  color: $white-color;
+  background-color: $white-color;
+  color: $black-color;
   padding-bottom: $nav-mobile-height;
 
   @include for-desktop-up {
@@ -30,12 +30,10 @@ main {
 
 h1 {
   @include clamp-title;
-  font-family: $title-font;
   text-align: center;
-  color: $white-color;
+  color: $black-color;
   font-weight: 400;
   margin: 1rem;
-  text-shadow: $font-stroke;
 
   @include for-desktop-up {
     margin: 2rem;
@@ -48,7 +46,6 @@ h2 {
 
 p {
   @include clamp-content;
-  font-family: $content-font;
   font-weight: 400;
   text-align: left;
 }

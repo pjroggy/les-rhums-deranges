@@ -37,27 +37,12 @@
   border-radius: 0.2rem;
   height: 1.5rem;
 }
-
-.input-message {
-  height: auto;
-}
-
-.validation-message {
-  margin: 0 auto 3rem;
-
-  @include for-desktop-up {
-    margin-top: 2rem;
-  }
-}
-
-.leaflet-container {
-  display: block;
-  margin: 0 auto 2rem;
-  height: 20rem;
-  width: 80%;
-  z-index: 0;
-
-  @include for-desktop-up {
-    height: 30rem;
-  }
+.button-recepie {
+  margin: 3rem auto 0.5rem;
+  border: 0.2rem outset $secondary-color;
+  color: $detail-color;
+  background-color: $primary-color;
+  border-radius: 0.7rem;
+  width: 10rem;
+  height: 1.6rem;
 }

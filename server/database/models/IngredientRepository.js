@@ -17,14 +17,15 @@ class IngredientRepository extends AbstractRepository {
   async read(id) {
     const [rows] = await this.database.query(
       `SELECT ingredient.*, JSON_ARRAYAGG(
-          JSON_OBJECT(
-            "id", ingredient_arranged_rum.arranged_rum_id,
-            "quantity", ingredient_arranged_rum.quantity
-          )
-        ) as arranged_rums FROM ${this.table}
-        LEFT JOIN ingredient_arranged_rum ON ingredient_arranged_rum.ingredient_id = ingredient.id
-        WHERE ingredient.id = ?
-        GROUP BY ingredient.id`,
+      JSON_OBJECT(
+        "id", arranged_rum.id,
+        "name", arranged_rum.name
+      )
+    ) as arranged_rums FROM ${this.table}
+    LEFT JOIN ingredient_arranged_rum ON ingredient_arranged_rum.ingredient_id = ingredient.id
+    LEFT JOIN arranged_rum ON arranged_rum.id = ingredient_arranged_rum.arranged_rum_id
+    WHERE ingredient.id = ?
+    GROUP BY ingredient.id`,
       [id]
     );
     return rows[0];
@@ -44,7 +45,10 @@ class IngredientRepository extends AbstractRepository {
   }
 
   async delete(id) {
-    const [result] = await this.database.query(`DELETE FROM ${this.table} WHERE id = ?`, [id]);
+    const [result] = await this.database.query(
+      `DELETE FROM ${this.table} WHERE id = ?`,
+      [id]
+    );
     return result.affectedRows;
   }
 }

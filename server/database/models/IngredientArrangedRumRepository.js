@@ -5,11 +5,10 @@ class IngredientArrangedRumRepository extends AbstractRepository {
     super({ table: "ingredient_arranged_rum" });
   }
 
-  async create(ingredientArrangedRum) {
-    console.info(ingredientArrangedRum);
+  async create(arrangedRumId, ingredientId, quantity) {
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (arranged_rum_id, ingredient_id, quantity) VALUES (?, ?, ?)`,
-      [ingredientArrangedRum.arranged_rum_id, ingredientArrangedRum.ingredient_id, ingredientArrangedRum.quantity]
+      [arrangedRumId, ingredientId, quantity]
     );
     return result.insertId;
   }

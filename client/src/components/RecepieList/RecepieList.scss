@@ -1,0 +1,16 @@
+@import "../../scss/index.scss";
+
+.recepie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.link {
+  margin-bottom: 2rem;
+}
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+.illustration {
+  width: 100%;
+}

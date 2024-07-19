@@ -19,10 +19,10 @@
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 30rem;
+  height: 20rem;
   object-fit: cover;
   @include for-desktop-up {
-    height: 35rem;
+    height: 40rem;
   }
 }
 .swiper-pagination-bullet {

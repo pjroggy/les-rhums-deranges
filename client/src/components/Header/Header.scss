@@ -1,10 +1,18 @@
 @import "../../scss/index.scss";
 
+header {
+  background-color: $primary-color;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
 .header-title {
   color: $secondary-color;
+  margin: 1rem 1rem 2rem;
 }
 
 .header-image {
+  align-self: center;
   width: 10rem;
   height: 10rem;
 }
@@ -12,6 +20,8 @@
 ul {
   list-style: none;
   display: flex;
+  margin: 1rem;
+  justify-content: center;
 }
 
 .nav-link {
@@ -20,6 +30,7 @@ ul {
   align-items: center;
   color: $secondary-color;
   text-decoration: none;
+  margin: 0 1rem;
   &.active {
     color: $detail-color;
   }

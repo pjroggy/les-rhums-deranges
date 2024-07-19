@@ -35,8 +35,9 @@ const edit = async (req, res, next) => {
 const add = async (req, res, next) => {
   const arrangedRum = req.body;
   try {
-    const insertId = await tables.arranged_rum.create(arrangedRum);
-    res.status(201).json({ insertId });
+    const arrangedRumId = await tables.arranged_rum.create(arrangedRum);
+    const insertId = await tables.ingredient_arranged_rum.create(arrangedRumId, arrangedRum.ingredientId, arrangedRum.quantity);
+    res.status(201).json({ success: true, insertId });
   } catch (err) {
     next(err);
   }
